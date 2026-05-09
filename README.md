@@ -1,38 +1,38 @@
 # Cursorex — public releases
 
-Сюда выкладывается **только локальный bridge** (native host + bridge), чтобы пользователи расширения из Chrome Web Store могли поставить совместимую версию без доступа к приватному исходнику.
+This repository publishes **only the local bridge** (native host + bridge runtime) so Chrome Web Store users can install a compatible build without access to the private source repository.
 
-## Расширение (Chrome Web Store)
+## Extension (Chrome Web Store)
 
-Установите **Cursorex** из магазина:
+Install **Cursorex** from the store:
 
 https://chromewebstore.google.com/detail/infbgmlkjfimojcjikknabbaifbafjoo?utm_source=github&utm_medium=wideserg-public&utm_campaign=cursorex_readme
 
-## Что скачать здесь
+## What to download here
 
-Во вкладке **Releases** возьмите архив **`cursorex-bridge-*.zip`** (готовый бандл bridge, не исходники этого репозитория).
+Open **Releases** and download **`cursorex-bridge-*.zip`**. That archive is a ready-made bridge bundle, not the source tree of this repo.
 
-## Требования
+## Requirements
 
-- **Node.js** LTS (20+), команда `node` доступна в терминале  
+- **Node.js** LTS (20+), with `node` on your PATH  
 - **Google Chrome** (stable)  
-- **Cursor CLI** на машине (как в основной инструкции Cursorex), если будете работать через локальный app-server  
+- **Cursor CLI** on the machine if you use the local Cursor app-server flow (same as the main Cursorex setup docs)
 
-## Установка bridge (после распаковки zip)
+## Install the bridge (after extracting the zip)
 
-Запускайте **один** скрипт под свою ОС (все лежат **в корне** распакованной папки):
+Run **one** launcher for your OS. All of these sit in the **root** of the extracted folder:
 
-| ОС | Установка | Удаление |
-|----|-----------|----------|
-| Windows | Дважды **`install_windows.bat`** | **`uninstall_windows.bat`** |
-| macOS | Дважды **`install_macos.command`** | **`uninstall_macos.command`** |
-| Linux | В терминале: **`chmod +x install_linux.sh`** (если нужно), затем **`./install_linux.sh`** | **`./uninstall_linux.sh`** |
+| OS | Install | Uninstall |
+|----|---------|-----------|
+| Windows | Double-click **`install_windows.bat`** | **`uninstall_windows.bat`** |
+| macOS | Double-click **`install_macos.command`** | **`uninstall_macos.command`** |
+| Linux | In a terminal: **`chmod +x install_linux.sh`** if needed, then **`./install_linux.sh`** | **`./uninstall_linux.sh`** |
 
-Дальше в Chrome: **Перезагрузить** расширение → в боковой панели **Check connection**.
+Then in Chrome: **Reload** the extension → in the side panel use **Check connection**.
 
-Нужен другой канал Chrome (Beta и т.д.) — см. флаги в `install-native-host.mjs` в полном репозитории или передайте аргументы тем же способом, что и для `node install-native-host.mjs`.
+For other Chrome channels (Beta, etc.), pass the same flags as for `node install-native-host.mjs` (see the full project) or run that script directly with extra arguments.
 
-## Что это за репозиторий
+## About this repository
 
-- Артефакты bridge собираются из приватного репо и публикуются сюда автоматически.  
-- Исходный код и CI здесь не ведутся — только релизы и эта памятка.
+- Bridge artifacts are built from a private repository and published here automatically.  
+- There is no application source or CI development in this repo—only releases and this README.
